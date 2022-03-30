@@ -282,8 +282,8 @@
 						<a href="index.html">A</a>
 					</div>
 					<ul class="sidebar-menu">
-						<li><a class="nav-link" href="#"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-						<li><a class="nav-link" href="#"><i class="fas fa-th"></i> <span>Kategori</span></a></li>
+						<li><a class="nav-link" href="<?= base_url('admin/dashboard') ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+						<li><a class="nav-link" href="<?= base_url('kategori') ?>"><i class="fas fa-th"></i> <span>Kategori</span></a></li>
 					</ul>
 				</aside>
 			</div>
