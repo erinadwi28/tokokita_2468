@@ -9,13 +9,14 @@ class Login extends CI_Controller {
       $u = $this->input->post('username');
       $p = $this->input->post('password');
 
-      $cek = $this->Mlogin->cek_login($u, $p)->num_rows();
+      $cek = $this->Mlogin->cek_login($u, $p);
 
-      if($cek==1){
-         $data_session = array(
-            'userName' => $u,
+      if($cek){
+         $data_session = [
+            'idAdmin' => $cek['idAdmin'],
+            'userName' => $cek['userName'],
             'status' => 'login'
-         );
+         ];
 
          $this->session->set_userdata($data_session);
          redirect('adminpanel/dashboard');

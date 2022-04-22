@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-	<title>Ecommerce Dashboard &mdash; Stisla</title>
+	<title>Dashboard Admin Toko Kita</title>
 
 	<!-- General CSS Files -->
 	<link rel="stylesheet" href="<?= base_url('assets/admin/dist') ?>/modules/bootstrap/css/bootstrap.min.css">
@@ -252,7 +252,7 @@
 							class="nav-link dropdown-toggle nav-link-lg nav-link-user">
 							<img alt="image" src="<?= base_url('assets/admin/dist') ?>/img/avatar/avatar-1.png"
 								class="rounded-circle mr-1">
-							<div class="d-sm-none d-lg-inline-block">Hi, Erina</div>
+							<div class="d-sm-none d-lg-inline-block">Hi, <?= $this->session->userdata('userName'); ?></div>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right">
 							<div class="dropdown-title">Logged in 5 min ago</div>
@@ -276,14 +276,27 @@
 			<div class="main-sidebar sidebar-style-2">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
-						<a href="index.html">My Admin</a>
+						<a href="#">My Admin</a>
 					</div>
 					<div class="sidebar-brand sidebar-brand-sm">
 						<a href="index.html">A</a>
 					</div>
 					<ul class="sidebar-menu">
-						<li><a class="nav-link" href="<?= base_url('admin/dashboard') ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-						<li><a class="nav-link" href="<?= base_url('kategori') ?>"><i class="fas fa-th"></i> <span>Kategori</span></a></li>
+						<li><a class="nav-link" href="<?= base_url('Adminpanel/dashboard') ?>"><i class="fas fa-fire"></i>
+								<span>Dashboard</span></a></li>
+						<li><a class="nav-link" href="<?= base_url('kategori') ?>"><i class="fas fa-th"></i>
+								<span>Kategori</span></a></li>
+						<li class="dropdown">
+							<a href="#" class="nav-link has-dropdown"><i class="fas fa-plane"></i> <span>Jasa Pengiriman</span></a>
+							<ul class="dropdown-menu">
+								<li><a class="nav-link" href="<?= base_url('kota') ?>"><i class="fas fa-city"></i>Kota</a></li>
+								<li><a class="nav-link" href="<?= base_url('kurir') ?>"><i class="fas fa-truck"></i>Kurir</a></li>
+								<li><a class="nav-link" href="<?= base_url('ongkir') ?>"><i class="fas fa-money-check"></i>Ongkos Kirim</a></li>
+								
+							</ul>
+						</li>
+						<li><a class="nav-link" href="<?= base_url('member') ?>"><i class="fas fa-users"></i>
+								<span>Member</span></a></li>
 					</ul>
 				</aside>
 			</div>

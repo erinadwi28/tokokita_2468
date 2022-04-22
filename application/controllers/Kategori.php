@@ -40,5 +40,10 @@ class Kategori extends CI_Controller {
       redirect('kategori');
    }
 
+   public function deleteKategori($id){
+      $dataWhere = array('idKat'=>$id);
+      $this->Mcrud->delete('tbl_kategori', $dataWhere);
+      redirect('kategori');
+   }
 
 }

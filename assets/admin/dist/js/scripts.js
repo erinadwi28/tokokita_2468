@@ -582,3 +582,13 @@ $(function() {
     });
   }
 });
+
+// UPLOAD FILE LABEL CHANGE
+$("#file-upload").change(function () {
+	var i = $(this).prev("label").clone();
+	var file = $("#file-upload")[0].files[0].name;
+	if (file.length > 25) {
+		file = file.substr(0, 15) + "..." + file.substr(-10);
+	}
+	$(this).prev("label").text(file);
+});

@@ -45,7 +45,7 @@
 
 						<div class="card card-primary">
 							<div class="card-header">
-								<h4>Login</h4>
+								<h4>Login Admin</h4>
 							</div>
 
 							<div class="card-body">
@@ -54,22 +54,22 @@
 										<label for="username">Username</label>
 										<input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
 										<div class="invalid-feedback">
-											Please fill in your Username
+											Username tidak boleh kosong !
 										</div>
 									</div>
 
 									<div class="form-group">
 										<div class="d-block">
 											<label for="password" class="control-label">Password</label>
-											<div class="float-right">
+											<!-- <div class="float-right">
 												<a href="auth-forgot-password.html" class="text-small">
 													Forgot Password?
 												</a>
-											</div>
+											</div> -->
 										</div>
 										<input id="password" type="password" class="form-control" name="password" tabindex="2" required>
 										<div class="invalid-feedback">
-											please fill in your password
+											Password tidak boleh kosong !
 										</div>
 									</div>
 
@@ -104,11 +104,11 @@
 
 							</div>
 						</div>
-						<div class="mt-5 text-muted text-center">
+						<!-- <div class="mt-5 text-muted text-center">
 							Don't have an account? <a href="auth-register.html">Create One</a>
-						</div>
+						</div> -->
 						<div class="simple-footer">
-							Copyright &copy; Stisla 2018
+						Copyright &copy; 2022 <div class="bullet"></div> Made with &hearts; By Erina Dwi Utami
 						</div>
 					</div>
 				</div>
