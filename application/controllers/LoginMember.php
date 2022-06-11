@@ -30,7 +30,7 @@ class LoginMember extends CI_Controller {
          ];
 
          $this->session->set_userdata($data_session);
-         redirect('frontend');
+         redirect('beranda');
       } else {
          redirect('login');
       }
@@ -39,6 +39,6 @@ class LoginMember extends CI_Controller {
    public function logout()
 	{
       $this->session->sess_destroy();
-      redirect('login');
+      redirect('beranda');
    }
 }

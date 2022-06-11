@@ -113,4 +113,89 @@ class Mcrud extends CI_Model {
 		$this->db->where($id);
 		$this->db->update($tabel, $data);
 	}
+
+	public function get_all_data_produk(){
+		$this->db->select('tbl_produk.*, tbl_toko.namaToko, tbl_kategori.namakat');
+      $this->db->from('tbl_produk');
+      $this->db->join('tbl_toko', 'tbl_produk.idToko = tbl_toko.idToko', 'INNER');
+      $this->db->join('tbl_kategori', 'tbl_produk.idKat  = tbl_kategori.idKat', 'INNER');
+
+      return $this->db->get();
+	}
+
+	//aksi tambah data produk
+	public function insertProduk($dataInsert, $tabel)
+	{
+		$this->db->insert($tabel, $dataInsert);
+		return $this->db->insert_id();
+	}
+
+	public function get_detail_data_produk($id){
+		$this->db->select('tbl_produk.*, tbl_toko.namaToko, tbl_kategori.namakat');
+      $this->db->from('tbl_produk');
+      $this->db->join('tbl_toko', 'tbl_produk.idToko = tbl_toko.idToko', 'INNER');
+      $this->db->join('tbl_kategori', 'tbl_produk.idKat  = tbl_kategori.idKat', 'INNER');
+		$this->db->where('tbl_produk.idProduk', $id);
+		
+      return $this->db->get();
+	}
+
+	// jumlah pada dashboard user
+	public function jumlah_toko() {
+		$this->db->select('COUNT(idToko) as total_toko');
+		$this->db->from('tbl_toko');
+
+		$hasil = $this->db->get();
+		return $hasil;
+	}
+
+	public function jumlah_produk() {
+		$this->db->select('COUNT(idProduk) as total_produk');
+		$this->db->from('tbl_produk');
+
+		$hasil = $this->db->get();
+		return $hasil;
+	}
+
+	public function jumlah_pesanan() {
+		$this->db->select('COUNT(idOrder) as total_pesanan');
+		$this->db->from('tbl_order');
+
+		$hasil = $this->db->get();
+		return $hasil;
+	}
+
+	public function get_all_produk_terbaru() {
+		$this->db->order_by('idProduk', 'DESC');
+		$this->db->limit(4);
+		$hasil = $this->db->get('tbl_produk');
+		return $hasil;
+	}
+
+	public function get_produk_by_id($id){
+		$this->db->select('*');
+      $this->db->from('tbl_produk');
+		$this->db->where('idProduk', $id);
+		
+      return $this->db->get();
+	}
+
+	public function get_all_kategori(){
+		$this->db->select('*');
+      $this->db->from('tbl_kategori');
+		
+      return $this->db->get();
+	}
+
+	public function get_order(){
+	  	$this->db->select('*');
+      $this->db->from('tbl_order');
+      $this->db->join('tbl_member','tbl_member.idKonsumen = tbl_order.idKonsumen');      
+      $this->db->join('tbl_toko','tbl_order.idToko = tbl_toko.idToko');    
+		$this->db->join('tbl_detail_order','tbl_order.idOrder = tbl_detail_order.idOrder');  
+		$this->db->join('tbl_produk','tbl_detail_order.idProduk = tbl_produk.idProduk');  
+      
+      return $this->db->get();
+	}
+
 }

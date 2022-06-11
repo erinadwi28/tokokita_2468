@@ -62,6 +62,9 @@ $route['aksi-daftar'] = 'daftar/daftar_akun';
 
 // Login Akun Member
 $route['login'] = 'loginmember';
+$route['beranda'] = 'frontend';
+$route['dashboard-member'] = 'frontend/dashboard';
+
 
 // Logout Akun Member
 $route['logout'] = 'loginmember/logout';
@@ -70,3 +73,15 @@ $route['logout'] = 'loginmember/logout';
 $route['list-toko-saya'] = 'frontend/list_toko';
 $route['buat-toko-saya'] = 'frontend/add_toko';
 $route['edit-toko-saya/(:num)'] = 'frontend/getDetailToko/$1';
+
+//Produk
+$route['list-produk'] = 'frontend/list_produk';
+$route['buat-produk'] = 'frontend/add_produk';
+$route['edit-produk/(:num)'] = 'frontend/getDetailProduk/$1';
+$route['hapus-produk/(:num)'] = 'frontend/deleteProduk/$1';
+
+//cart
+$route['keranjang'] = 'frontend/keranjang';
+
+//pesanan
+$route['list-pesanan'] = 'frontend/transaksi';

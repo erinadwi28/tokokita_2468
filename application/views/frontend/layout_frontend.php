@@ -34,8 +34,9 @@
 						<i class="fas fa-ellipsis-v"></i>
 					</a>
 					<ul class="navbar-nav">
-						<li class="nav-item active"><a href="#" class="nav-link">Tentang Tokokita</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">Cara Belanja</a></li>
+					<li class="nav-item active"><a href="<?= base_url('beranda') ?>" class="nav-link">Beranda</a></li>
+					<li class="nav-item"><a href="<?= base_url('keranjang') ?>" class="nav-link">Keranjang</a></li>
+						<li class="nav-item"><a href="#" class="nav-link">Tentang</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">Hubungi Kami</a></li>
 					</ul>
 				</div>
@@ -54,12 +55,7 @@
 						<button class="btn" type="submit"><i class="fas fa-search"></i></button>
 					</div>
 				</form>
-				<ul class="navbar-nav navbar-right">
-
-					<li><a href="http://localhost/tokokita/index.php/member/keranjang"><i class="far fa-bell"></i></a>
-
-					</li>
-
+				<ul class="navbar-nav navbar-right ml-4">
 					<li>
 						<?php if ($this->session->userdata('username')){ ?>
 						<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -72,14 +68,11 @@
 							<div class="d-sm-none d-lg-inline-block">Hi, <?= $this->session->userdata('username'); ?></div>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right">
-							<a href="features-profile.html" class="dropdown-item has-icon">
-								<i class="far fa-user"></i> Profile
+							<a href="<?= base_url('dashboard-member') ?>" class="dropdown-item has-icon">
+								<i class="fas fa-tachometer-alt"></i> Dashboard
 							</a>
-							<a href="features-activities.html" class="dropdown-item has-icon">
-								<i class="fas fa-bolt"></i> Activities
-							</a>
-							<a href="features-settings.html" class="dropdown-item has-icon">
-								<i class="fas fa-cog"></i> Settings
+							<a href="#" class="dropdown-item has-icon">
+								<i class="fas fa-user"></i> Profil Saya
 							</a>
 							<div class="dropdown-divider"></div>
 							<a href="<?= base_url('logout') ?>" class="dropdown-item has-icon text-danger">

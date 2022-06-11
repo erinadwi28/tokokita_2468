@@ -28,7 +28,6 @@
 											<?php foreach($kurir as $item) { ?>
 											<option <?php if($ongkir->idKurir == $item->idKurir) { echo 'selected="selected"';} ?>
 												value="<?= $item->idKurir; ?>"><?= $item->namaKurir; ?></option>
-
 											<?php } ?>
 										</select>
 										<div class="invalid-feedback">
